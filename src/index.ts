@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
+
 app.post("/identify", (req: Request, res: Response) => {
   try {
     let { email = null, phoneNumber = null } = req.body ?? {};
